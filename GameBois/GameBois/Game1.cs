@@ -16,6 +16,7 @@ namespace GameBois {
     public class Game1 : Microsoft.Xna.Framework.Game {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Tile[,] Map;
 
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
@@ -41,6 +42,13 @@ namespace GameBois {
         protected override void LoadContent() {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            Map = new Tile[25,25];
+            for (int i = 0; i < 25; i++) {
+                for (int q = 0; q < 25; q++) {
+                    Map[i, q] = new Tile(i, q);
+                }
+            }
+
 
             // TODO: use this.Content to load your game content here
         }
